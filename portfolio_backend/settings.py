@@ -19,13 +19,14 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/4.2/howto/deployment/checklist/
 
-# SECURITY WARNING: keep the secret key usedsecret!
+# SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = 'django-insecure-_go=8o5*re40#o+f&prnfnl8xjgs3^l_p5d9ns!o0(@w+*8-ei'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
 ALLOWED_HOSTS = ["*"]
+
 
 
 # Application definition
@@ -52,9 +53,7 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
     'corsheaders.middleware.CorsMiddleware',
 ]
-CORS_ALLOWED_ORIGINS = [
-    "http://127.0.0.1:5500",  # Adjust to your frontend URL
-]
+
 
 ROOT_URLCONF = 'portfolio_backend.urls'
 
@@ -117,12 +116,18 @@ TIME_ZONE = 'UTC'
 USE_I18N = True
 
 USE_TZ = True
+CORS_ALLOWED_ORIGINS = [
+      # React development server
+     'http://127.0.0.1:5500',  # Django development server
+      # Your production domain
+]
 
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.2/howto/static-files/
 
 STATIC_URL = 'static/'
+
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
