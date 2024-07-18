@@ -118,7 +118,8 @@ USE_I18N = True
 USE_TZ = True
 CORS_ALLOWED_ORIGINS = [
       # React development server
-     'http://127.0.0.1:5500',  # Django development server
+     'http://127.0.0.1:5500',
+      "https://kalashsingh18.github.io" , # Django development server
       # Your production domain
 ]
 
